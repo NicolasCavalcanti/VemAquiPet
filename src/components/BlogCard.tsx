@@ -1,7 +1,7 @@
 import Link from "next/link";
-import Image from "next/image";
 import { Clock } from "lucide-react";
 import type { BlogPost } from "@/lib/types";
+import BlogImage from "@/components/BlogImage";
 
 interface BlogCardProps {
   post: BlogPost;
@@ -20,17 +20,14 @@ export default function BlogCard({ post, featured = false }: BlogCardProps) {
         href={`/blog/${post.slug}`}
         className="group flex flex-col md:flex-row gap-0 rounded-2xl overflow-hidden bg-white shadow-[0_2px_12px_rgba(36,60,74,0.08)] hover:shadow-[0_6px_24px_rgba(36,60,74,0.14)] transition-all duration-300"
       >
-        {/* Hero image */}
-        <div className="md:w-2/5 aspect-video md:aspect-auto relative overflow-hidden">
-          <Image
+        {/* Image container */}
+        <div className="md:w-2/5 w-full h-56 md:h-auto relative overflow-hidden bg-[#E7D9C0]">
+          <BlogImage
             src={post.image}
             alt={post.imageAlt}
-            fill
-            style={{ objectFit: "cover" }}
-            sizes="(max-width: 768px) 100vw, 40vw"
-            className="transition-transform duration-500 group-hover:scale-105"
+            className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent pointer-events-none" />
         </div>
 
         {/* Content */}
@@ -66,17 +63,14 @@ export default function BlogCard({ post, featured = false }: BlogCardProps) {
       href={`/blog/${post.slug}`}
       className="group flex flex-col rounded-2xl overflow-hidden bg-white shadow-[0_2px_12px_rgba(36,60,74,0.08)] hover:shadow-[0_6px_24px_rgba(36,60,74,0.14)] transition-all duration-300 hover:-translate-y-0.5"
     >
-      {/* Hero image */}
-      <div className="aspect-video relative overflow-hidden">
-        <Image
+      {/* Image container */}
+      <div className="w-full h-48 relative overflow-hidden bg-[#E7D9C0]">
+        <BlogImage
           src={post.image}
           alt={post.imageAlt}
-          fill
-          style={{ objectFit: "cover" }}
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          className="transition-transform duration-500 group-hover:scale-105"
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
         <div className="absolute top-3 left-3">
           <span className="px-2.5 py-1 rounded-full text-xs font-medium bg-white/90 text-[#2F7D5A]">
             {post.category}

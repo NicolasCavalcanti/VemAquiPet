@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import Link from "next/link";
+import BlogImage from "@/components/BlogImage";
 import { Clock, Calendar, Tag, ArrowLeft, ArrowRight } from "lucide-react";
 import Breadcrumb from "@/components/Breadcrumb";
 import BlogCard from "@/components/BlogCard";
@@ -63,7 +63,7 @@ const articleContents: Record<string, ContentBlock[]> = {
     },
     {
       kind: "img",
-      src: "/images/blog/complem-sinais-dor-cachorro.svg",
+      src: "/images/blog/complem-sinais-dor-cachorro.png",
       alt: "Ilustração mostrando os principais pontos de observação para identificar dor em cães: postura, expressão facial e comportamento",
       caption: "Observe a postura, a expressão facial e as mudanças de comportamento do seu cão",
     },
@@ -96,7 +96,7 @@ const articleContents: Record<string, ContentBlock[]> = {
     },
     {
       kind: "img",
-      src: "/images/blog/complem-calendario-vacinas.svg",
+      src: "/images/blog/complem-calendario-vacinas.png",
       alt: "Calendário de vacinação para cães e gatos organizando as doses por faixa etária ao longo da vida do pet",
       caption: "Mantenha o calendário de vacinação atualizado do filhote à fase adulta e sênior",
     },
@@ -125,7 +125,7 @@ const articleContents: Record<string, ContentBlock[]> = {
     },
     {
       kind: "img",
-      src: "/images/blog/complem-espaco-gato.svg",
+      src: "/images/blog/complem-espaco-gato.png",
       alt: "Gato em ambiente doméstico com prateleiras, esconderijos e arranhadores que promovem bem-estar e redução do estresse",
       caption: "Esconderijos, altura e arranhadores são essenciais para o bem-estar do gato dentro de casa",
     },
@@ -181,7 +181,7 @@ const articleContents: Record<string, ContentBlock[]> = {
     },
     {
       kind: "img",
-      src: "/images/blog/complem-alimentacao-rotina.svg",
+      src: "/images/blog/complem-alimentacao-rotina.png",
       alt: "Alimentação organizada em horários fixos para pet adulto, com porção adequada ao porte e fase de vida",
       caption: "Horários fixos de alimentação ajudam a regular o metabolismo e o comportamento do pet",
     },
@@ -241,7 +241,7 @@ const articleContents: Record<string, ContentBlock[]> = {
     },
     {
       kind: "img",
-      src: "/images/blog/complem-cuidados-pet-senior.svg",
+      src: "/images/blog/complem-cuidados-pet-senior.png",
       alt: "Tutor dedicando atenção especial a cachorro idoso, massageando suas articulações com carinho em ambiente doméstico",
       caption: "Pets idosos precisam de atenção redobrada às articulações, alimentação e conforto",
     },
@@ -274,7 +274,7 @@ const articleContents: Record<string, ContentBlock[]> = {
     },
     {
       kind: "img",
-      src: "/images/blog/complem-filhote-preparacao.svg",
+      src: "/images/blog/complem-filhote-preparacao.png",
       alt: "Checklist de preparação da casa para receber filhote — itens essenciais organizados por categoria de segurança e conforto",
       caption: "Revise cada ambiente da casa com os olhos de um filhote curioso para identificar riscos",
     },
@@ -311,7 +311,7 @@ const articleContents: Record<string, ContentBlock[]> = {
     },
     {
       kind: "img",
-      src: "/images/blog/complem-brinquedos-enriquecimento.svg",
+      src: "/images/blog/complem-brinquedos-enriquecimento.png",
       alt: "Seleção de brinquedos e estruturas de enriquecimento ambiental para pets, incluindo comedouros interativos e brinquedos de caça",
       caption: "Variar os tipos de estimulação mantém o interesse do pet e previne o tédio",
     },
@@ -340,7 +340,7 @@ const articleContents: Record<string, ContentBlock[]> = {
     },
     {
       kind: "img",
-      src: "/images/blog/complem-equipamento-caminhada.svg",
+      src: "/images/blog/complem-equipamento-caminhada.png",
       alt: "Peitoral, guia e itens essenciais para caminhar com segurança com o cachorro na rua",
       caption: "O equipamento certo garante conforto para o cão e controle seguro para o tutor",
     },
@@ -524,15 +524,12 @@ export default async function BlogPostPage({ params }: Props) {
             {/* Article */}
             <article className="lg:col-span-2">
               {/* Hero image */}
-              <div className="aspect-video rounded-2xl overflow-hidden mb-8 relative">
-                <Image
+              <div className="w-full h-64 md:h-80 rounded-2xl overflow-hidden mb-8 relative bg-[#E7D9C0]">
+                <BlogImage
                   src={post.image}
                   alt={post.imageAlt}
-                  fill
-                  style={{ objectFit: "cover" }}
-                  sizes="(max-width: 1024px) 100vw, 66vw"
                   priority
-                  className="rounded-2xl"
+                  className="absolute inset-0 w-full h-full object-cover rounded-2xl"
                 />
               </div>
 
@@ -542,14 +539,11 @@ export default async function BlogPostPage({ params }: Props) {
                   if (block.kind === "img") {
                     return (
                       <figure key={i} className="my-8 rounded-xl overflow-hidden">
-                        <div className="aspect-video relative">
-                          <Image
+                        <div className="w-full h-48 md:h-64 relative bg-[#E7D9C0] rounded-xl overflow-hidden">
+                          <BlogImage
                             src={block.src}
                             alt={block.alt}
-                            fill
-                            style={{ objectFit: "cover" }}
-                            sizes="(max-width: 1024px) 100vw, 66vw"
-                            className="rounded-xl"
+                            className="absolute inset-0 w-full h-full object-cover"
                           />
                         </div>
                         {block.caption && (
