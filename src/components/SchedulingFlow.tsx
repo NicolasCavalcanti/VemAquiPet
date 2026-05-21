@@ -81,9 +81,21 @@ const MONTHS_PT = [
 ];
 const DAYS_PT = ["Dom","Seg","Ter","Qua","Qui","Sex","Sáb"];
 
-export default function SchedulingFlow() {
-  const [step, setStep] = useState<Step>("service");
-  const [data, setData] = useState<Partial<BookingData>>({});
+interface SchedulingFlowProps {
+  initialService?: string;
+}
+
+export default function SchedulingFlow({ initialService }: SchedulingFlowProps = {}) {
+  const resolvedInitial = initialService
+    ? serviceOptions.find((s) => s.id === initialService)
+    : undefined;
+
+  const [step, setStep] = useState<Step>(resolvedInitial ? "region" : "service");
+  const [data, setData] = useState<Partial<BookingData>>(
+    resolvedInitial
+      ? { service: resolvedInitial.id, serviceLabel: resolvedInitial.label }
+      : {}
+  );
   const [triageAnswers, setTriageAnswers] = useState<Record<string, boolean>>({});
   const [calendarDate, setCalendarDate] = useState(() => {
     const now = new Date();
