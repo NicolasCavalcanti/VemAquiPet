@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="450" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1a3a20"/>
+      <stop offset="100%" stop-color="#2a5c30"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="400" cy="210" r="160" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#88C97A" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#88C97A" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <circle cx="710" cy="60" r="200" fill="none" stroke="white" stroke-width="1" opacity="0.06"/>
+  <circle cx="710" cy="60" r="140" fill="none" stroke="white" stroke-width="1" opacity="0.06"/>
+  <circle cx="90" cy="390" r="110" fill="none" stroke="white" stroke-width="1" opacity="0.05"/>
+  <circle cx="400" cy="210" r="140" fill="url(#glow)"/>
+  <circle cx="400" cy="210" r="88" fill="white" fill-opacity="0.07"/>
+  <circle cx="400" cy="210" r="88" fill="none" stroke="white" stroke-width="1" opacity="0.14"/>
+  <!-- map icon scaled 8x -->
+  <g transform="translate(304, 114) scale(8)" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.92">
+    <polygon points="3 6 10 3 17 6 21 4 21 18 17 20 10 17 3 20 3 6"/>
+    <line x1="10" y1="3" x2="10" y2="17"/>
+    <line x1="17" y1="6" x2="17" y2="20"/>
+  </g>
+  <rect x="40" y="396" rx="12" ry="12" width="102" height="26" fill="white" fill-opacity="0.12"/>
+  <text x="56" y="414" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="white" opacity="0.85">Guia Local</text>
+  <text x="760" y="436" font-family="Arial, sans-serif" font-size="10" fill="white" opacity="0.3" text-anchor="end">vemaquipet.com.br</text>
+</svg>

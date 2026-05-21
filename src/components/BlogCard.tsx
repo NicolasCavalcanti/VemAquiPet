@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Clock, Tag } from "lucide-react";
+import Image from "next/image";
+import { Clock } from "lucide-react";
 import type { BlogPost } from "@/lib/types";
 
 interface BlogCardProps {
@@ -19,11 +20,17 @@ export default function BlogCard({ post, featured = false }: BlogCardProps) {
         href={`/blog/${post.slug}`}
         className="group flex flex-col md:flex-row gap-0 rounded-2xl overflow-hidden bg-white shadow-[0_2px_12px_rgba(36,60,74,0.08)] hover:shadow-[0_6px_24px_rgba(36,60,74,0.14)] transition-all duration-300"
       >
-        {/* Image */}
-        <div className="md:w-2/5 aspect-video md:aspect-auto bg-[#DFF3E8] relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#2F7D5A]/20 to-[#243C4A]/30 flex items-center justify-center">
-            <span className="text-6xl">🐾</span>
-          </div>
+        {/* Hero image */}
+        <div className="md:w-2/5 aspect-video md:aspect-auto relative overflow-hidden">
+          <Image
+            src={post.image}
+            alt={post.imageAlt}
+            fill
+            style={{ objectFit: "cover" }}
+            sizes="(max-width: 768px) 100vw, 40vw"
+            className="transition-transform duration-500 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
         </div>
 
         {/* Content */}
@@ -59,11 +66,17 @@ export default function BlogCard({ post, featured = false }: BlogCardProps) {
       href={`/blog/${post.slug}`}
       className="group flex flex-col rounded-2xl overflow-hidden bg-white shadow-[0_2px_12px_rgba(36,60,74,0.08)] hover:shadow-[0_6px_24px_rgba(36,60,74,0.14)] transition-all duration-300 hover:-translate-y-0.5"
     >
-      {/* Image */}
-      <div className="aspect-video bg-[#DFF3E8] relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#2F7D5A]/20 to-[#243C4A]/20 flex items-center justify-center">
-          <span className="text-5xl">🐾</span>
-        </div>
+      {/* Hero image */}
+      <div className="aspect-video relative overflow-hidden">
+        <Image
+          src={post.image}
+          alt={post.imageAlt}
+          fill
+          style={{ objectFit: "cover" }}
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className="transition-transform duration-500 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
         <div className="absolute top-3 left-3">
           <span className="px-2.5 py-1 rounded-full text-xs font-medium bg-white/90 text-[#2F7D5A]">
             {post.category}

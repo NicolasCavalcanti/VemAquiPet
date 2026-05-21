@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="450" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1a3830"/>
+      <stop offset="100%" stop-color="#2a5848"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="400" cy="210" r="160" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#88D9C0" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#88D9C0" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <circle cx="710" cy="60" r="200" fill="none" stroke="white" stroke-width="1" opacity="0.06"/>
+  <circle cx="710" cy="60" r="140" fill="none" stroke="white" stroke-width="1" opacity="0.06"/>
+  <circle cx="90" cy="390" r="110" fill="none" stroke="white" stroke-width="1" opacity="0.05"/>
+  <circle cx="400" cy="210" r="140" fill="url(#glow)"/>
+  <circle cx="400" cy="210" r="88" fill="white" fill-opacity="0.07"/>
+  <circle cx="400" cy="210" r="88" fill="none" stroke="white" stroke-width="1" opacity="0.14"/>
+  <!-- home icon scaled 8x -->
+  <g transform="translate(304, 114) scale(8)" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.92">
+    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+    <polyline points="9 22 9 12 15 12 15 22"/>
+  </g>
+  <rect x="40" y="396" rx="12" ry="12" width="162" height="26" fill="white" fill-opacity="0.12"/>
+  <text x="56" y="414" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="white" opacity="0.85">Rotina e Bem-estar</text>
+  <text x="760" y="436" font-family="Arial, sans-serif" font-size="10" fill="white" opacity="0.3" text-anchor="end">vemaquipet.com.br</text>
+</svg>
