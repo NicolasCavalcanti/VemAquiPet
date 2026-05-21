@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 import { blogPosts } from "@/lib/data";
 
+export const dynamic = "force-static";
+
 const BASE_URL = "https://vemaquipet.com.br";
 
 export default function sitemap(): MetadataRoute.Sitemap {
