@@ -22,11 +22,6 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://vemaquipet.com.br"),
-  icons: {
-    icon: "/Favicon.jpg",
-    shortcut: "/Favicon.jpg",
-    apple: "/Favicon.jpg",
-  },
   title: {
     template: "%s | Vem Aqui Pet",
     default: "Vem Aqui Pet: portal pet da Granja Viana, Cotia e região",
