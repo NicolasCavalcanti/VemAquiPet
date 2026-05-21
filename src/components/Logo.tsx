@@ -10,7 +10,7 @@ interface LogoProps {
 const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export default function Logo({ variant = "default", size = "md" }: LogoProps) {
-  const sizes = { sm: 32, md: 40, lg: 52 };
+  const sizes = { sm: 64, md: 80, lg: 104 };
   const s = sizes[size];
   const inkColor = variant === "white" ? "#FFF7EA" : "#243C4A";
   const clayColor = "#D9906A";
