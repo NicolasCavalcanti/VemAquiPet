@@ -1,4 +1,6 @@
 import type { MetadataRoute } from "next";
+
+export const dynamic = "force-static";
 import { blogPosts } from "@/lib/data";
 
 const BASE_URL = "https://vemaquipet.com.br";
