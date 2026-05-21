@@ -56,7 +56,7 @@ const sections: { title: string; faqs: FAQ[] }[] = [
       {
         question: "Posso cancelar ou reagendar?",
         answer:
-          "Sim. Entre em contato pelo WhatsApp ou e-mail com antecedência mínima de 24 horas. A funcionalidade de cancelamento e reagendamento online estará disponível em breve.",
+          "Sim. Entre em contato pelo e-mail com antecedência mínima de 24 horas. A funcionalidade de cancelamento e reagendamento online estará disponível em breve.",
       },
     ],
   },

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, Phone, MapPin, Check, MessageCircle } from "lucide-react";
+import { Mail, MapPin, Check } from "lucide-react";
 import Breadcrumb from "@/components/Breadcrumb";
 
 export default function ContatoPage() {
@@ -44,7 +44,6 @@ export default function ContatoPage() {
               </h2>
               <div className="space-y-4">
                 {[
-                  { icon: <Phone size={16} />, label: "WhatsApp", value: "(11) 99999-9999", href: "https://wa.me/5511999999999" },
                   { icon: <Mail size={16} />, label: "E-mail", value: "contato@vemaquipet.com.br", href: "mailto:contato@vemaquipet.com.br" },
                   { icon: <MapPin size={16} />, label: "Atuação", value: "Granja Viana, Cotia e região", href: undefined },
                 ].map((item) => (
@@ -72,14 +71,13 @@ export default function ContatoPage() {
 
               <div className="mt-6 p-5 rounded-xl bg-[#DFF3E8]">
                 <div className="flex items-center gap-2 mb-2">
-                  <MessageCircle size={16} className="text-[#2F7D5A]" />
+                  <Mail size={16} className="text-[#2F7D5A]" />
                   <p className="font-semibold text-[#243C4A] text-sm" style={{ fontFamily: "var(--font-sora), sans-serif" }}>
-                    Resposta mais rápida pelo WhatsApp
+                    Respondemos em até 48 horas úteis
                   </p>
                 </div>
                 <p className="text-xs text-[#5F6F5A]">
-                  Para assuntos urgentes ou agendamentos, o WhatsApp é o canal com resposta mais
-                  ágil. E-mails são respondidos em até 48 horas úteis.
+                  Para agendamentos e suporte, utilize o formulário ao lado ou envie um e-mail. Nossa equipe responde em até 48 horas úteis.
                 </p>
               </div>
             </div>

@@ -9,15 +9,9 @@ export function SchemaOrg() {
         url: "https://vemaquipet.com.br",
         logo: "https://vemaquipet.com.br/logo.png",
         sameAs: [
-          "https://instagram.com/vemaquipet",
-          "https://facebook.com/vemaquipet",
+          "https://www.instagram.com/VemAquiPet",
+          "https://www.tiktok.com/@VemAquiPet",
         ],
-        contactPoint: {
-          "@type": "ContactPoint",
-          telephone: "+55-11-99999-9999",
-          contactType: "customer service",
-          availableLanguage: "Portuguese",
-        },
       },
       {
         "@type": "WebSite",
@@ -42,7 +36,6 @@ export function SchemaOrg() {
         name: "Vem Aqui Pet",
         image: "https://vemaquipet.com.br/og-image.jpg",
         url: "https://vemaquipet.com.br",
-        telephone: "+55-11-99999-9999",
         address: {
           "@type": "PostalAddress",
           addressLocality: "Cotia",
