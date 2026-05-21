@@ -1,12 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 
 interface LogoProps {
   variant?: "default" | "white";
   size?: "sm" | "md" | "lg";
 }
+
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export default function Logo({ variant = "default", size = "md" }: LogoProps) {
   const sizes = { sm: 32, md: 40, lg: 52 };
@@ -16,13 +17,13 @@ export default function Logo({ variant = "default", size = "md" }: LogoProps) {
 
   return (
     <Link href="/" className="flex items-center gap-2.5 group" aria-label="Vem Aqui Pet - Início">
-      <Image
-        src="/lOGO.png"
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={`${BASE_PATH}/lOGO.png`}
         alt="Vem Aqui Pet"
         width={s}
         height={s}
         className="flex-shrink-0"
-        priority
       />
 
       <div className="flex flex-col leading-none">
