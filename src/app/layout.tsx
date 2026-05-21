@@ -23,32 +23,32 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://vemaquipet.com.br"),
   icons: {
-    icon: "/Favicon.jpg",
-    shortcut: "/Favicon.jpg",
-    apple: "/Favicon.jpg",
+    icon: "/lOGO.png",
+    shortcut: "/lOGO.png",
+    apple: "/lOGO.png",
   },
   title: {
     template: "%s | Vem Aqui Pet",
-    default: "Vem Aqui Pet: portal pet da Granja Viana, Cotia e região",
+    default: "Vem Aqui Pet | Portal de conteúdo e soluções para pets",
   },
   description:
-    "Conteúdos confiáveis, guias locais, serviços em domicílio, vida ativa e soluções para tutores de pets da Granja Viana, Cotia e região.",
+    "Conteúdos confiáveis, guias, serviços em domicílio, vida ativa e soluções para tutores de pets.",
   keywords: [
-    "pet Granja Viana",
+    "portal pet",
     "veterinário em casa",
     "saúde pet",
     "cuidados com cachorro",
     "guia local pet",
-    "Cotia pet",
+    "bem-estar animal",
   ],
   openGraph: {
     type: "website",
     locale: "pt_BR",
     url: "https://vemaquipet.com.br",
     siteName: "Vem Aqui Pet",
-    title: "Vem Aqui Pet: portal pet da Granja Viana, Cotia e região",
+    title: "Vem Aqui Pet | Portal de conteúdo e soluções para pets",
     description:
-      "Conteúdos confiáveis, guias locais, serviços em domicílio e soluções para tutores.",
+      "Conteúdos confiáveis, guias, serviços em domicílio e soluções para tutores de pets.",
     images: [
       {
         url: "/og-image.jpg",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Vem Aqui Pet",
-    description: "Portal pet da Granja Viana, Cotia e região.",
+    description: "Portal de conteúdo e soluções para tutores de pets.",
   },
   robots: {
     index: true,
