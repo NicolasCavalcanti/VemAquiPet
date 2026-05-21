@@ -8,6 +8,7 @@ export interface BlogPost {
   readTime: number;
   date: string;
   image: string;
+  imageAlt: string;
   tags: string[];
   featured?: boolean;
 }
