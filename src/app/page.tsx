@@ -16,9 +16,9 @@ import {
 } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Vem Aqui Pet: portal pet da Granja Viana, Cotia e região",
+  title: { absolute: "Vem Aqui Pet | Portal de conteúdo e soluções para pets" },
   description:
-    "Conteúdos confiáveis, guias locais, serviços em domicílio, vida ativa e soluções para tutores de pets da Granja Viana, Cotia e região.",
+    "Conteúdos confiáveis, guias, serviços em domicílio, vida ativa e soluções para tutores de pets.",
 };
 
 const featuredPosts = blogPosts.filter((p) => p.featured);
