@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      - claude/fix-scheduling-system-apkgV
+      - claude/replace-logo-YQIWP
   workflow_dispatch:
 
 permissions:
