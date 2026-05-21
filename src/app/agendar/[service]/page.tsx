@@ -8,6 +8,17 @@ export const metadata: Metadata = {
     "Agende serviços pet em domicílio na Granja Viana, Cotia e região. Escolha o serviço, data e horário disponíveis.",
 };
 
+export function generateStaticParams() {
+  return [
+    { service: "vet-em-casa" },
+    { service: "banho-em-casa" },
+    { service: "pet-sitter" },
+    { service: "adestramento" },
+    { service: "passeador" },
+    { service: "condominios" },
+  ];
+}
+
 interface Props {
   params: Promise<{ service: string }>;
 }
