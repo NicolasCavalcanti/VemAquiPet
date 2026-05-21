@@ -14,7 +14,6 @@ import {
   Calendar,
   CheckCircle,
   AlertTriangle,
-  MessageCircle,
 } from "lucide-react";
 
 type Step = "service" | "region" | "calendar" | "tutor" | "pet" | "triage" | "confirm" | "done";
@@ -227,17 +226,9 @@ export default function SchedulingFlow() {
         </h2>
         <p className="text-[#5F6F5A] mb-8">
           A equipe Vem Aqui Pet entrará em contato para confirmar os detalhes do seu
-          agendamento por WhatsApp ou e-mail.
+          agendamento por e-mail.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          <a
-            href="https://wa.me/5511999999999"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#2F7D5A] text-white text-sm font-semibold hover:bg-[#266a4b] transition-colors"
-            style={{ fontFamily: "var(--font-sora), sans-serif" }}
-          >
-            <MessageCircle size={15} />
-            Falar no WhatsApp
-          </a>
           <Link
             href="/"
             className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-[#F6EFE6] text-[#243C4A] text-sm font-semibold hover:bg-[#FFF7EA] transition-colors"
@@ -507,7 +498,7 @@ export default function SchedulingFlow() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
             {[
               { key: "tutorName", label: "Nome completo", placeholder: "Seu nome" },
-              { key: "tutorPhone", label: "WhatsApp", placeholder: "(11) 99999-9999" },
+              { key: "tutorPhone", label: "Telefone", placeholder: "Seu telefone para contato" },
               { key: "tutorEmail", label: "E-mail", placeholder: "seu@email.com", full: true },
             ].map((f) => (
               <div key={f.key} className={f.full ? "sm:col-span-2" : ""}>
@@ -653,14 +644,14 @@ export default function SchedulingFlow() {
                 <p className="text-sm text-[#5F6F5A]">
                   Pelo que você informou, este caso pode exigir atendimento de urgência ou
                   estrutura hospitalar. Nossa equipe pode orientar o melhor encaminhamento, mas
-                  o atendimento domiciliar pode não ser adequado. Entre em contato pelo WhatsApp
+                  o atendimento domiciliar pode não ser adequado. Entre em contato pelo e-mail
                   antes de confirmar.
                 </p>
                 <a
-                  href="https://wa.me/5511999999999"
+                  href="mailto:contato@vemaquipet.com.br"
                   className="inline-flex items-center gap-1.5 mt-3 text-sm font-semibold text-[#2F7D5A] hover:underline"
                 >
-                  <MessageCircle size={14} /> Falar no WhatsApp
+                  contato@vemaquipet.com.br
                 </a>
               </div>
             </div>
@@ -716,14 +707,6 @@ export default function SchedulingFlow() {
               <Calendar size={15} />
               Confirmar agendamento
             </button>
-            <a
-              href="https://wa.me/5511999999999"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#2F7D5A] text-white text-sm font-semibold hover:bg-[#266a4b] transition-colors"
-              style={{ fontFamily: "var(--font-sora), sans-serif" }}
-            >
-              <MessageCircle size={15} />
-              Falar no WhatsApp
-            </a>
             <button
               onClick={goBack}
               className="w-full sm:w-auto flex items-center justify-center gap-1.5 text-sm text-[#5F6F5A] hover:text-[#243C4A] px-4 py-3.5"

@@ -205,7 +205,7 @@ export default function TrabalheConoscoPage() {
 
               {[
                 { key: "nome", label: "Nome completo", type: "text", placeholder: "Seu nome", required: true },
-                { key: "whatsapp", label: "WhatsApp", type: "tel", placeholder: "(11) 99999-9999", required: true },
+                { key: "whatsapp", label: "Contato", type: "text", placeholder: "Seu telefone ou e-mail de contato", required: true },
                 { key: "email", label: "E-mail", type: "email", placeholder: "seu@email.com", required: true },
               ].map((f) => (
                 <div key={f.key}>
