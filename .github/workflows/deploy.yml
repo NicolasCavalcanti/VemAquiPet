@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - claude/replace-logo-YQIWP
   workflow_dispatch:
 
 permissions:
