@@ -116,6 +116,8 @@ export default function SchedulingFlow() {
 
   const progressPct = step === "done" ? 100 : Math.round((currentIndex / (steps.length - 1)) * 100);
 
+  const BOOKING_CUTOFF = new Date(2026, 6, 2); // July 2, 2026 — agenda encerrada após esta data
+
   const renderCalendar = () => {
     const { year, month } = calendarDate;
     const daysInMonth = getDaysInMonth(year, month);
@@ -131,9 +133,16 @@ export default function SchedulingFlow() {
       const todayMid = new Date(today.getFullYear(), today.getMonth(), today.getDate());
       return cellDate < todayMid;
     };
+    const isAfterCutoff = (d: number) => {
+      const cellDate = new Date(year, month, d);
+      return cellDate > BOOKING_CUTOFF;
+    };
+    const isUnavailable = (d: number) => isPast(d) || isAfterCutoff(d);
     const isSelected = (d: number) => {
       return data.date === `${year}-${String(month + 1).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
     };
+
+    const monthHasAvailability = cells.some((d) => d !== null && !isUnavailable(d));
 
     return (
       <div className="bg-white rounded-2xl border border-[#F6EFE6] p-5">
@@ -176,13 +185,13 @@ export default function SchedulingFlow() {
                 <div />
               ) : (
                 <button
-                  disabled={isPast(d)}
+                  disabled={isUnavailable(d)}
                   onClick={() => {
                     const dateStr = `${year}-${String(month + 1).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
                     setData((prev) => ({ ...prev, date: dateStr, time: undefined }));
                   }}
                   className={`w-full aspect-square rounded-lg text-sm font-medium transition-colors ${
-                    isPast(d)
+                    isUnavailable(d)
                       ? "text-[#5F6F5A]/30 cursor-not-allowed"
                       : isSelected(d)
                       ? "bg-[#243C4A] text-[#FFF7EA]"
@@ -195,6 +204,11 @@ export default function SchedulingFlow() {
             </div>
           ))}
         </div>
+        {!monthHasAvailability && (
+          <p className="mt-3 text-xs text-center text-[#D9906A] font-medium">
+            Sem disponibilidade neste mês. Agenda encerrada após 02/07/2026.
+          </p>
+        )}
       </div>
     );
   };
@@ -419,7 +433,7 @@ export default function SchedulingFlow() {
             </button>
             <button
               onClick={goNext}
-              disabled={!data.neighborhood}
+              disabled={!data.neighborhood && !data.region}
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#D9906A] text-white text-sm font-semibold hover:bg-[#c47a56] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
               style={{ fontFamily: "var(--font-sora), sans-serif" }}
             >
